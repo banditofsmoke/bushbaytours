@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bush & Bay Tours - Nelson Mandela Bay and Eastern Cape Adventures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-image: url('https://source.unsplash.com/1600x900/?african,landscape');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 20px 0;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        /* Navigation Styles */
+        nav {
+            margin-top: 20px;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .tab {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 600;
+        }
+
+        .tab:hover, .tab.active {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        /* Main Content Styles */
+        main {
+            margin-top: 160px; /* Updated margin-top */
+            padding-top: 20px; /* Updated padding-top */
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .tour-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+            padding-top: 20px; /* Added padding-top */
+        }
+
+        .tour-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Tour Card Styles */
+        .tour-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tour-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .tour-card p {
+            margin-bottom: 10px;
+        }
+
+        .tour-card .price {
+            font-weight: 700;
+            color: #e74c3c;
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #ecf0f1;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tab-container {
+                flex-direction: column;
+            }
+
+            .tab {
+                margin-bottom: 10px;
+            }
+
+            main {
+                margin-top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Bush & Bay Tours</a>
+            <nav>
+                <div class="tab-container">
+                    <a href="#about" class="tab active">About Us</a>
+                    <a href="#tours" class="tab">Our Tours</a>
+                    <a href="#contact" class="tab">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about" class="tour-section active">
+            <h1>Welcome to Bush & Bay Tours</h1>
+            <p>We are a passionate team of Tourism, Hospitality, and Conservation professionals dedicated to showcasing the breathtaking beauty of Nelson Mandela Bay and the surrounding Eastern Cape bushveld areas. As South Africa's Adventure Province, we offer unforgettable experiences that will leave you in awe of nature's wonders.</p>
+            <p>Our commitment is to provide you with seamless, comfortable, and informative tours. We'll collect you from your accommodation in the Port Elizabeth/Gqeberha area in our modern, air-conditioned vehicles. Sit back and relax as our qualified guides and rangers take you on scenic journeys filled with fascinating insights into our region's rich biodiversity and cultural heritage.</p>
+            <p>At Bush & Bay Tours, we understand that every traveler is unique. That's why we offer customizable itineraries to match your interests and schedule. Whether you're seeking thrilling wildlife encounters, serene coastal views, or immersive cultural experiences, we have the perfect adventure waiting for you. Join us and discover the magic of the Eastern Cape!</p>
+        </section>
+
+        <section id="tours" class="tour-section">
+            <h2>Our Exciting Tours</h2>
+            <div class="tour-card">
+                <h3>Addo National Park Full Day Tour</h3>
+                <p>Embark on a full-day adventure in South Africa's third-largest national park. Witness the majesty of the Big 5 and countless other species in their natural habitat.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>8 AM pickup from your accommodation</li>
+                    <li>Air-conditioned vehicle transport</li>
+                    <li>Expert guide throughout the tour</li>
+                    <li>Refreshment stops at scenic vantage points</li>
+                    <li>Delicious lunch in the heart of the park</li>
+                </ul>
+                <p class="price">Cost per person: R2550</p>
+            </div>
+            <div class="tour-card">
+                <h3>Addo National Park Half Day Tour</h3>
+                <p>Perfect for those short on time but big on adventure. Experience the wonders of Addo in a compact 4-hour tour.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Flexible morning or afternoon departures</li>
+                    <li>Chance to spot the Big 5</li>
+                    <li>Knowledgeable guide to enhance your experience</li>
+                    <li>Refreshment stop included</li>
+                </ul>
+                <p class="price">Cost per person: R1750</p>
+            </div>
+            <div class="tour-card">
+                <h3>Addo Nat Park & Private Game Reserve Full Day and Evening Tour</h3>
+                <p>The ultimate safari experience combining Addo National Park and a private game reserve, including a night drive.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Full day in Addo National Elephant Park</li>
+                    <li>Lunch at an iconic spot</li>
+                    <li>Afternoon and sunset game drive in a private reserve</li>
+                    <li>Dinner under the stars in a thatched boma</li>
+                    <li>Thrilling night game drive</li>
+                </ul>
+                <p class="price">Cost per person: R3750</p>
+            </div>
+            <div class="tour-card">
+                <h3>Marine Safari</h3>
+                <p>Discover the wonders of Nelson Mandela Bay, a paradise for marine life enthusiasts.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Bottlenose Dolphin spotting</li>
+                    <li>Visit to bay islands (viewed from the boat)</li>
+                    <li>Chance to see whales (seasonal)</li>
+                    <li>Visit to Cape Recife Coastal Conservancy</li>
+                    <li>Tour of penguin rehabilitation center</li>
+                </ul>
+                <p class="price">Cost per person: R2950</p>
+            </div>
+            <div class="tour-card">
+                <h3>City Tour</h3>
+                <p>Explore the rich history and culture of Port Elizabeth/Gqeberha on this enlightening city tour.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Visit to Fort Frederick</li>
+                    <li>Exploration of the Donkin Reserve</li>
+                    <li>Tour of the South End Museum</li>
+                    <li>Visit to Cape Recife Lighthouse</li>
+                    <li>Tour of penguin rehabilitation center</li>
+                </ul>
+                <p class="price">Cost per person: R950</p>
+            </div>
+        </section>
+
+        <section id="contact" class="tour-section">
+            <h2>Contact Us</h2>
+            <p>Ready to embark on your Eastern Cape adventure? Get in touch with us to book your tour or for any inquiries.</p>
+            <form action="https://formspree.io/f/xyyqqqzz" method="POST" class="contact-form">  <!-- Updated Formspree URL -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="tour">Preferred Tour:</label>
+                    <select id="tour" name="tour" required>
+                        <option value="">Select a tour</option>
+                        <option value="Addo Full Day">Addo National Park Full Day Tour</option>
+                        <option value="Addo Half Day">Addo National Park Half Day Tour</option>
+                        <option value="Addo Full Day and Evening">Addo Nat Park & Private Game Reserve Full Day and Evening Tour</option>
+                        <option value="Marine Safari">Marine Safari</option>
+                        <option value="City Tour">City Tour</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Bush & Bay Tours. All rights reserved. | Discover the wonders of Nelson Mandela Bay and the Eastern Cape</p>
+    </footer>
+
+    <script>
+        // JavaScript for tab functionality
+        const tabs = document.querySelectorAll('.tab');
+        const sections = document.querySelectorAll('.tour-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href').substring(1);
+
+                tabs.forEach(t => t.classList.remove('active'));
+                sections.forEach(s => s.classList.remove('active'));
+
+                e.target.classList.add('active');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
